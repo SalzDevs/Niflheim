@@ -93,7 +93,7 @@ func FileWalker(dir string) ([]string, error) {
 			return err
 		}
 
-		if info.IsDir() && !strings.HasPrefix(info.Name(), ".") {	
+		if info.IsDir() && strings.HasPrefix(info.Name(), ".") {	
 			return filepath.SkipDir
 		}
 
